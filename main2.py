@@ -1,13 +1,7 @@
-version="2.2.0"
+version="2.2.1"
 #IMPORT
 import getpass,time,os
 import signal
-
-if os.path.isdir("/sdcard/ROC-X")!=True and os.path.isdir("$HOME/Desktop/ROC-X")!=True :
-	try:
-		os.mkdir("/sdcard/ROC-X")
-	except:
-		os.mkdir("$HOME/Desktop/ROC-X")
 
 #CVALUE
 blue= '\33[94m'
