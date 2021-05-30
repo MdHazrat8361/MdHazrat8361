@@ -118,7 +118,7 @@ while tt<2:
 		opt()
 	
 			
-	elif opt2=="3":
+	elif opt2=="2":
 		os.system("python3 main2.py")
 	else:
 		text=cyan+"\t\tDeveloped By : Sanaur Asif"+green+"\n\n\t\t★★ ROC-X BD SMS Bomber ★★   \n" 
