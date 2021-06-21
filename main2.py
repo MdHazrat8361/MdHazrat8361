@@ -1,4 +1,4 @@
-version="2.2.5"
+version="2.2.6"
 #IMPORT
 import getpass,time,os
 import signal
