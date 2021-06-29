@@ -52,7 +52,7 @@ def clear():
 	os.system("clear || cls")
 
 count=1
-about=9
+about=10
 e_count=1
 ddos_count=1
 kali_count=1
