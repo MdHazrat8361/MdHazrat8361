@@ -1,6 +1,6 @@
-version="2.2.9"
+version="2.3.0"
 #IMPORT
-import getpass,time,os
+import getpass,time,os,sys
 import signal
 
 #CVALUE
