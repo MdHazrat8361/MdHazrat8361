@@ -4,7 +4,7 @@ import getpass,time,os,sys
 import signal
 import time,os,sys
 import sys, random
-import threading,time, requests
+import threading,time
 #CVALUE
 blue= '\33[94m'
 lightblue = '\033[94m'
